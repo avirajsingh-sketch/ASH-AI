@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — ASH</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body data-page="login">
+  <div class="toast-wrap" id="toast-wrap"></div>
+
+  <div class="auth-scene">
+    <div class="auth-left">
+      <div class="auth-left-bg"></div>
+      <div class="auth-left-grid"></div>
+      <div class="auth-brand">
+        <div class="auth-brand-logo">
+          <span class="a-l">A</span>S<span class="h-l">H</span>
+        </div>
+        <h1>ASH</h1>
+        <p>Autonomous agents that think, plan, and act — so you don't have to.</p>
+        <ul class="auth-feature-list">
+          <li><span class="dot"></span> Persistent memory across sessions</li>
+          <li><span class="dot"></span> Task automation with real-time execution</li>
+          <li><span class="dot"></span> Groq LLM-powered conversational AI</li>
+          <li><span class="dot"></span> Secure Firebase Authentication</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-form-box">
+        <h2>Welcome back</h2>
+        <p class="auth-sub">Sign in to your ASH workspace</p>
+
+        <form id="auth-form" novalidate>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required/>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required/>
+          </div>
+          <div id="auth-error" class="auth-error-msg" style="display:none;"></div>
+          <button type="submit" id="auth-btn" class="btn btn-primary btn-lg" style="margin-top:8px;">
+            <span class="btn-spinner"></span>
+            <span class="btn-label">Sign In</span>
+          </button>
+        </form>
+
+        <div class="auth-divider">or</div>
+        <div class="auth-switch">
+          No account? <a href="/register">Create one free</a>
+        </div>
+        <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--glass-border);text-align:center;">
+          <span style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;">
+            ASH v{{ app_meta.version }} · by Aviraj &amp; Sehaj
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

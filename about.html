@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — ASH</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body data-page="about">
+  <div class="toast-wrap" id="toast-wrap"></div>
+  <div class="app-layout">
+    {% include '_sidebar.html' %}
+    <div class="main-content">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div class="topbar-title">About</div>
+      </header>
+      <div class="page-body page-enter">
+        <div class="card" style="max-width:600px;">
+          <div style="font-size:48px;margin-bottom:16px;">🤖</div>
+          <h1 style="font-size:28px;font-weight:800;margin-bottom:8px;">ASH</h1>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:24px;font-style:italic;">Autonomous. Smart. Helpful.</p>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:20px;">
+            ASH is an autonomous AI Agent Platform built by <strong style="color:var(--text-primary);">Aviraj and Sehaj</strong>.
+            It combines an intelligent agent engine, persistent memory, task management, and a conversational interface.
+          </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+            <div class="stat-card" style="padding:16px;">
+              <div style="font-size:24px;margin-bottom:8px;">🏗️</div>
+              <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">Aviraj</div>
+              <div style="font-size:12px;color:var(--text-muted);">Platform Architect & Co-Founder</div>
+            </div>
+            <div class="stat-card" style="padding:16px;">
+              <div style="font-size:24px;margin-bottom:8px;">🎨</div>
+              <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">Sehaj</div>
+              <div style="font-size:12px;color:var(--text-muted);">Product Vision & Co-Founder</div>
+            </div>
+          </div>
+          <div style="font-size:12px;color:var(--text-muted);">Version {{ app_meta.version }} · Phase 3.5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

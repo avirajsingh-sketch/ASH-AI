@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agent — ASH</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body data-page="agent">
+  <div class="toast-wrap" id="toast-wrap"></div>
+  <div class="app-layout">
+    {% include '_sidebar.html' %}
+    <div class="main-content">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div class="topbar-title">Agent</div>
+        <div class="topbar-status">
+          <div class="status-dot"></div>
+          <span id="agent-status-text">Agent ready</span>
+        </div>
+      </header>
+      <div class="page-body page-enter">
+        <div class="agent-console-wrap">
+          <div class="agent-output-panel">
+            <div class="agent-output-header">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div class="status-dot"></div>
+                <span style="font-size:13px;font-weight:600;color:var(--text-primary);">ASH Agent Console</span>
+              </div>
+              <button class="btn btn-ghost btn-sm" id="clear-console-btn">Clear</button>
+            </div>
+            <div class="agent-output-body" id="agent-output">
+              <div class="agent-msg agent-msg-system">
+                <div class="agent-msg-icon">🤖</div>
+                <div class="agent-msg-content">
+                  <div class="agent-msg-label">ASH Agent · Phase 3.5</div>
+                  <div class="agent-msg-text">Hello! I'm ASH, your autonomous AI agent. I'm online and ready to receive tasks. Type a task below and press Run!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="agent-input-panel">
+            <textarea id="agent-task-input" class="agent-textarea" placeholder="Describe a task for ASH… e.g. 'What can you do?', 'Check system status', 'Who created you?'" rows="3"></textarea>
+            <div class="agent-input-actions">
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="btn btn-ghost btn-sm agent-quick-btn" data-task="Check system status">Status</button>
+                <button class="btn btn-ghost btn-sm agent-quick-btn" data-task="What memories do I have?">Memory</button>
+                <button class="btn btn-ghost btn-sm agent-quick-btn" data-task="List my tasks">Tasks</button>
+                <button class="btn btn-ghost btn-sm agent-quick-btn" data-task="What can you do?">Help</button>
+              </div>
+              <button class="btn btn-primary" id="run-agent-btn" style="width:auto;min-width:120px;">
+                <span class="btn-spinner"></span>
+                <span class="btn-label">▶ Run Task</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
